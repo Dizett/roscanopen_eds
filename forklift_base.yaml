@@ -1,0 +1,14 @@
+bus:
+  device: vcan0
+  master_allocator: canopen::SimpleMaster::Allocator
+sync:
+  interval_ms: 10
+  overflow: 0
+heartbeat:
+  rate: 100 # simple heartbeat producer, optional!
+  msg: "77f#05" # message to send, cansend format: heartbeat of node 127 with status 5=Started
+nodes:
+  node1:
+    id: 1
+    eds_file: /home/user/eds/phyPS409Y.eds
+
